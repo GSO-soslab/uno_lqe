@@ -9,7 +9,7 @@ add_compile_options(-std=c++17)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  seal_msgs
+  mvp_msgs
   std_msgs
 )
 
@@ -70,7 +70,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   seal_msgs#   std_msgs
+#   mvp_msgs#   std_msgs
 # )
 
 ################################################
@@ -105,7 +105,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES uno_lqe
-  CATKIN_DEPENDS roscpp seal_msgs std_msgs
+  CATKIN_DEPENDS roscpp mvp_msgs std_msgs
 #  DEPENDS system_lib
 )
 

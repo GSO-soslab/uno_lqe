@@ -33,18 +33,18 @@ UnoLqeNode::UnoLqeNode() {
 
     m_subscriber = m_nh->subscribe(in_topic, 10, &UnoLqeNode::f_callback, this);
 
-    m_publisher = m_nh->advertise<seal_msgs::Float64StampedWithVariance>(out_topic, 10);
+    m_publisher = m_nh->advertise<mvp_msgs::Float64StampedWithVariance>(out_topic, 10);
 
 }
 
-void UnoLqeNode::f_callback(const seal_msgs::Float64Stamped::ConstPtr& msg) {
+void UnoLqeNode::f_callback(const mvp_msgs::Float64Stamped::ConstPtr& msg) {
     auto z = msg->data;
 
     m_filter->predict();
 
     m_filter->update(z);
 
-    seal_msgs::Float64StampedWithVariance out;
+    mvp_msgs::Float64StampedWithVariance out;
 
     m_filter->state(&(out.data), &(out.variance));
 

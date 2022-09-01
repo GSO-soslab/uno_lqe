@@ -3,8 +3,8 @@
 
 #include "ros/ros.h"
 #include "uno_lqe/uno_lqe.h"
-#include "seal_msgs/Float64Stamped.h"
-#include "seal_msgs/Float64StampedWithVariance.h"
+#include "mvp_msgs/Float64Stamped.h"
+#include "mvp_msgs/Float64StampedWithVariance.h"
 
 class UnoLqeNode {
 private:
@@ -19,7 +19,7 @@ private:
 
     ros::Publisher m_publisher;
 
-    void f_callback(const seal_msgs::Float64Stamped::ConstPtr& msg);
+    void f_callback(const mvp_msgs::Float64Stamped::ConstPtr& msg);
 
 public:
 
